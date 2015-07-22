@@ -710,13 +710,7 @@
 - (MKCoordinateRegion)boundingMapRectBetween:(CLLocationCoordinate2D)coordinate1 and:(CLLocationCoordinate2D)coordinate2 {
     MKMapPoint p1 = MKMapPointForCoordinate(coordinate1);
     MKMapPoint p2 = MKMapPointForCoordinate(coordinate2);
-
-    CLLocationCoordinate2D bottomCoordinate = CLLocationCoordinate2DMake(coordinate1.latitude + 0.001, coordinate1.longitude + 0.001);
-    CLLocationCoordinate2D topCoordinate = CLLocationCoordinate2DMake(coordinate2.latitude, coordinate2.longitude);
-
-    MKMapRect mapRect = MKMapRectMake(fmin(p1.x, p2.x), fmin(p1.y, p2.y) + 1, fabs(p1.x - p2.x), fabs(p1.y - p2.y));
-
-
+    MKMapRect mapRect = MKMapRectMake(fmin(p1.x, p2.x), fmin(p1.y, p2.y), fabs(p1.x - p2.x), fabs(p1.y - p2.y));
     return MKCoordinateRegionForMapRect(mapRect);
 }
 
