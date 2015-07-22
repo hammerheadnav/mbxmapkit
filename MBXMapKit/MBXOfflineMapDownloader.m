@@ -849,9 +849,9 @@
 
 - (NSArray *)getUrlsForMapId:(NSString *)mapID mapRegion:(MKCoordinateRegion)mapRegion minimumZ:(NSInteger)minimumZ maximumZ:(NSInteger)maximumZ {
     NSMutableArray *urls = [NSMutableArray new];
-    CLLocationDegrees minLat = (mapRegion).center.latitude - ((mapRegion).span.latitudeDelta / 2.0) - 0.001;
+    CLLocationDegrees minLat = (mapRegion).center.latitude - ((mapRegion).span.latitudeDelta / 2.0);
     CLLocationDegrees maxLat = minLat + (mapRegion).span.latitudeDelta;
-    CLLocationDegrees minLon = (mapRegion).center.longitude - ((mapRegion).span.longitudeDelta / 2.0) - 0.001;
+    CLLocationDegrees minLon = (mapRegion).center.longitude - ((mapRegion).span.longitudeDelta / 2.0);
     CLLocationDegrees maxLon = minLon + (mapRegion).span.longitudeDelta;
     NSUInteger minX;
     NSUInteger maxX;
