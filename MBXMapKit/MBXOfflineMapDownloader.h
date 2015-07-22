@@ -166,7 +166,7 @@ typedef NS_ENUM(NSUInteger, MBXOfflineMapDownloaderState) {
 *   @param includeMetadata Whether to include the map's metadata (for values such as the initial center point and zoom) in the offline map.
 *   @param includeMarkers Whether to include the map's marker image resources in the offline map.
 *   @param imageQuality The image quality to when requesting tiles. */
-- (void)beginDownloadingMapID:(NSString *)mapID mapRegion:(MKCoordinateRegion)mapRegion minimumZ:(NSInteger)minimumZ maximumZ:(NSInteger)maximumZ includeMetadata:(BOOL)includeMetadata includeMarkers:(BOOL)includeMarkers imageQuality:(MBXRasterImageQuality)imageQuality;
+- (void)beginDownloadingMapID:(NSString *)mapID coordinates:(NSArray *)coordinates minimumZ:(NSInteger)minimumZ maximumZ:(NSInteger)maximumZ includeMetadata:(BOOL)includeMetadata includeMarkers:(BOOL)includeMarkers imageQuality:(MBXRasterImageQuality)imageQuality;
 
 /** Cancels the current offline map download job and discards any associated resources. */
 - (void)cancel;
